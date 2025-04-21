@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>彩妝趨勢網站</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to right, #e6caff, #fad0c4);
+      text-align: center;
+      color: #333;
+    }
+
+    header {
+      background: linear-gradient(to right, #c8aff7, #c4e1ff);
+      color: black;
+      padding: 20px;
+      font-size: 30px;
+      font-weight: 300;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    .box {
+      background: white;
+      padding: 20px;
+      margin: 20px auto;
+      width: 80%;
+      max-width: 600px;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+
+    .box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    h2 {
+      color: #d63384;
+    }
+
+    button {
+      background-color: #ff758c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #f06b9b;
+    }
+
+    @media (max-width: 600px) {
+      .box {
+        width: 90%;
+      }
+    }
+
+    audio {
+      display: block;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+  <header>✨ 彩妝趨勢網站 ✨</header>
+
+  <!-- 背景音樂 -->
+  <audio autoplay loop controls>
+    <source src="background-music.mp3" type="audio/mpeg">
+    您的瀏覽器不支援音訊元素。
+  </audio>
+
+  <main>
+    <div class="box" onclick="location.href='trends.html';">
+      <h2>流行的彩妝趨勢📈</h2>
+      <p>探索現代青年最愛的彩妝風格與流行色彩！</p>
+    </div>
+    <div class="box" onclick="location.href='brands.html';">
+      <h2>最受歡迎的彩妝品牌📊</h2>
+      <p>看看 Z 世代最愛的彩妝品牌排行！</p>
+    </div>
+    <div class="box" onclick="location.href='colors.html';">
+      <h2>虛擬試彩💄</h2>
+      <p>未來這裡可以加上 AI 試妝功能！</p>
+    </div>
+    <div class="box" onclick="location.href='share.html';">
+      <h2>分享你的彩妝心得！</h2>
+      <p>上傳你的化妝過程、文章或心得！</p>
+    </div>
+  </main>
+</body>
+</html>
