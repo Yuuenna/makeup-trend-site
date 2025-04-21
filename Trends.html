@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>彩妝趨勢統計</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #E6CAFF, #fad0c4);
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: linear-gradient(to right, #C4E1FF, #4487d4);
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+        }
+        .chart-container {
+            width: 80%;
+            max-width: 600px;
+            margin: 30px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+    <header>📊 彩妝品牌喜好統計</header>
+    <div class="chart-container">
+        <canvas id="brandChart"></canvas>
+    </div>
+    <script>
+        const ctx = document.getElementById('brandChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'pie',
+            data: {
+                labels: ['品牌A', '品牌B', '品牌C', '品牌D', '品牌E'],
+                datasets: [{
+                    data: [25, 20, 30, 15, 10],
+                    backgroundColor: ['#FF6384', '#36A2EB', '#FFCE56', '#4BC0C0', '#9966FF'],
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        position: 'bottom'
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

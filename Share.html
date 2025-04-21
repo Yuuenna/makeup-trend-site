@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分享你的彩妝心得</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, 	#E6CAFF, #fad0c4);
+            text-align: center;
+            color: #333;
+        }
+        header {
+            background: linear-gradient(to right, #c8aff7, #C4E1FF);
+            color: black;
+            padding: 15px;
+            font-size: 30px;
+            font-weight: thin;
+        }
+        .content {
+            padding: 20px;
+        }
+        .post-box, .recommendation {
+            background: white;
+            padding: 20px;
+            margin: 15px auto;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        input, textarea, button {
+            width: 90%;
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #000;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #333;
+        }
+        .comment-box {
+            margin-top: 15px;
+            text-align: left;
+        }
+        .comment-box input {
+            width: 80%;
+        }
+        .like-btn {
+            background-color: transparent;
+            color: #000;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .navbar {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 600px;
+            background: #f0f0f0;
+            display: flex;
+            justify-content: space-around;
+            padding: 10px 0;
+            border-radius: 12px 12px 0 0;
+            box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+        }
+        .navbar button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 5px;
+            color: #888;
+        }
+        .navbar button.active {
+            color: #000;
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        function likePost(btn) {
+            let count = btn.nextElementSibling;
+            count.innerText = parseInt(count.innerText) + 1;
+        }
+        function setActiveButton(button) {
+            document.querySelectorAll('.navbar button').forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <header>📝 分享你的彩妝心得</header>
+    <div class="content">
+        <div class="post-box">
+            <h2>發表你的彩妝心得</h2>
+            <input type="text" placeholder="標題">
+            <textarea rows="5" placeholder="撰寫你的心得..."></textarea>
+            <input type="file" accept="image/*">
+            <button>提交</button>
+        </div>
+        <div class="recommendation">
+            <h2>✨ 推薦文章 ✨</h2>
+            <p>探索其他使用者的精彩彩妝心得！</p>
+            <ul>
+                <li><a href="#">如何打造自然系妝容</a> <button class="like-btn" onclick="likePost(this)">❤️</button> <span>0</span></li>
+                <li><a href="#">最受歡迎的彩妝品牌排行</a> <button class="like-btn" onclick="likePost(this)">❤️</button> <span>0</span></li>
+                <li><a href="#">我的彩妝進化史</a> <button class="like-btn" onclick="likePost(this)">❤️</button> <span>0</span></li>
+            </ul>
+        </div>
+        <div class="comment-box">
+            <h3>💬 留言區</h3>
+            <input type="text" placeholder="寫下你的留言...">
+            <button>提交留言</button>
+        </div>
+    </div>
+    
+    <div class="navbar">
+        <button onclick="location.href='index.html'; setActiveButton(this);">🏠</button>
+        <button onclick="alert('搜尋功能待開發'); setActiveButton(this);">🔍</button>
+        <button class="active" onclick="location.href='share.html'; setActiveButton(this);">➕</button>
+        <button onclick="alert('互動功能待開發'); setActiveButton(this);">💬</button>
+        <button onclick="alert('個人資料功能待開發'); setActiveButton(this);">👤</button>
+    </div>
+</body>
+</html>
